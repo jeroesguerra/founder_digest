@@ -2,8 +2,6 @@
 
 a give-and-get newsletter swap for founders seeking to learn from other founders.
 
-testing this commit
-
 ## Installation
 
 1. clone the repo
