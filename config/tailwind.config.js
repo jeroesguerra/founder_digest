@@ -1,28 +1,29 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   content: [
-    './app/helpers/**/*.rb',
-    './app/javascript/**/*.js',
-    './app/views/**/*'
+    "./app/helpers/**/*.rb",
+    "./app/javascript/**/*.js",
+    "./app/views/**/*",
   ],
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans]
+        sans: ["Inter var", ...defaultTheme.fontFamily.sans],
       },
-      colors: { // custom color palette for branding
-        'primary': 'rgb(79, 70, 229)',
-        'primary-hover': {
-          '700': '#a4411c',
-          '500': '#EA9A72'
-        }
-      }
+      colors: {
+        // custom color palette for branding
+        primary: "#249040",
+        "primary-hover": {
+          700: "#217B38",
+          500: "#217B38",
+        },
+      },
     },
   },
   plugins: [
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/aspect-ratio'),
-    require('@tailwindcss/typography'),
-  ]
-}
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/aspect-ratio"),
+    require("@tailwindcss/typography"),
+  ],
+};
