@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'pages#home'
-
-  get 'apply', to: 'pages#apply'
+  get 'apply', to: 'pages#apply' # new user application form
+  get 'start', to: 'pages#start' # new user onboarding
 
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_up: 'signup' }
   get 'logout', to: 'pages#logout', as: 'logout'
@@ -22,15 +22,19 @@ Rails.application.routes.draw do
     get "/#{page}", to: "pages##{page}", as: "#{page.gsub('-', '_')}"
   end
 
+  namespace :admin do
+    get '/', to: 'pages#dashboard'
+  end
+
   # admin panels
-  authenticated :user, -> user { user.admin? } do
-    namespace :admin do
-      resources :dashboard, only: [:index]
-      resources :impersonations, only: [:new]
-      resources :users, only: [:edit, :update, :destroy]
-    end
+ # authenticated :user, -> user { user.admin? } do
+  #  namespace :admin do
+   #   resources :dashboard, only: [:index]
+    #  resources :impersonations, only: [:new]
+     # resources :users, only: [:edit, :update, :destroy]
+    # end
 
     # convenience helper
-    get 'admin', to: 'admin/dashboard#index'
-  end
+    # get 'admin', to: 'admin/dashboard#index'
+   # end
 end
