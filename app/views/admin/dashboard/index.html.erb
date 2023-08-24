@@ -30,10 +30,10 @@
             </tr>
           </thead>
           <tbody class="bg-white divide-y divide-gray-200">
-            <% @users.each do |user| %>
+            <% @user_submissions.each do |user| %>
               <tr>
                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  <%= user.created_at.in_time_zone('Eastern Time (US & Canada)').strftime('%F %H:%M') %>
+                  <%= user.created_at.in_time_zone('Pacific Time (US & Canada)').strftime('%F %H:%M') %>
                 </td>
                 <td class="px-6 py-4 whitespace-wrap text-sm text-gray-500">
                   <%= user.email %>
