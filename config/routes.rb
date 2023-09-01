@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'pages#home'
   get 'apply', to: 'pages#apply' # new user application form
+  get 'thanks', to: 'pages#thanks', as: 'thanks' # => invoke with thanks_path
   get 'start', to: 'pages#start' # new user onboarding
 
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_up: 'signup' }
