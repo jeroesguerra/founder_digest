@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'apply', to: 'pages#apply' # new user application form
   get 'thanks', to: 'pages#thanks', as: 'thanks' # => invoke with thanks_path
   get 'start', to: 'pages#start' # new user onboarding
+  get 'magic_login', to:'pages#magic_login', as: 'magic_login'
 
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_up: 'signup' }
   get 'logout', to: 'pages#logout', as: 'logout'
@@ -18,6 +19,7 @@ Rails.application.routes.draw do
   match '/cancel' => 'billing_portal#destroy', via: [:get]
 
   resources :user_submissions, only: [:create]
+  resources :projects, only: [:create]
 
   # static pages
   pages = %w(

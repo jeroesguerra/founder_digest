@@ -12,28 +12,28 @@
                     <div class="sm:col-span-3">
                     <label for="first_name" class="block text-sm font-medium leading-6 text-gray-900">First name</label>
                     <div class="mt-1">
-                        <%= f.text_field :first_name, placeholder: 'Jero', class:'block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6' %>
+                        <%= f.text_field :first_name, required: true, placeholder: 'Jero', class:'block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6' %>
                     </div>
                 </div>
 
                 <div class="sm:col-span-3">
                     <label for="last_name" class="block text-sm font-medium leading-6 text-gray-900">Last name</label>
                     <div class="mt-1">
-                        <%= f.text_field :last_name, placeholder: 'Esguerra', class:'block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6' %>
+                        <%= f.text_field :last_name, required: true, placeholder: 'Esguerra', class:'block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6' %>
                     </div>
                 </div>
 
                 <div class="sm:col-span-6">
                     <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
                     <div class="mt-1">
-                        <%= f.text_field :email, type: 'email', placeholder:'jero@jeroesguerra.com', class:'block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6' %>
+                        <%= f.text_field :email, type: 'email', required: true, placeholder:'jero@jeroesguerra.com', class:'block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6' %>
                     </div>
                     </div>
 
                     <div class="sm:col-span-6">
                     <label for="website" class="block text-sm font-medium leading-6 text-gray-900">Company Website</label>
                     <div class="mt-1">
-                        <%= f.text_field :website, type: 'url', placeholder:'https://jeroesguerra.com', class:'block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6' %>
+                        <%= f.text_field :website, type: 'url', required: true, placeholder:'https://jeroesguerra.com', class:'block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6' %>
                     </div>
                 </div>
             </div>
@@ -44,15 +44,15 @@
                         <legend class="text-sm font-semibold leading-6 text-gray-900">What's your role?</legend>
                         <div class="mt-6 space-y-4">
                             <div class="flex items-center gap-x-3">
-                                <input id="user_submission_job_role_csuite" name="user_submission[job_role]" type="radio" value="c-suite" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                <input id="user_submission_job_role_csuite" required name="user_submission[job_role]" type="radio" value="c-suite" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                 <label for="user_submission_job_role_csuite" class="block text-sm font-medium leading-6 text-gray-900">C-Suite</label>
                             </div>
                             <div class="flex items-center gap-x-3">
-                                <input id="user_submission_job_role_founder" name="user_submission[job_role]" type="radio" value="founder" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                <input id="user_submission_job_role_founder" required name="user_submission[job_role]" type="radio" value="founder" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                 <label for="user_submission_job_role_founder" class="block text-sm font-medium leading-6 text-gray-900">Founder</label>
                             </div>
                             <div class="flex items-center gap-x-3">
-                                <input id="user_submission_job_role_employee" name="user_submission[job_role]" type="radio" value="employee" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                <input id="user_submission_job_role_employee" required name="user_submission[job_role]" type="radio" value="employee" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                 <label for="user_submission_job_role_employee" class="block text-sm font-medium leading-6 text-gray-900">Employee</label>
                             </div>
                         </div>
