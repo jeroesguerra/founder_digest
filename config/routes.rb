@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   get 'logout', to: 'pages#logout', as: 'logout'
 
   resources :subscribe, only: [:index]
- # resources :dashboard, only: [:index]
   get 'dashboard', to: 'dashboard#index'
   get 'updates/new', to: 'updates#new'
 
@@ -20,6 +19,7 @@ Rails.application.routes.draw do
 
   resources :user_submissions, only: [:create]
   resources :projects, only: [:update]
+  resources :subscribers, only: [:create, :destroy]
 
   # static pages
   pages = %w(

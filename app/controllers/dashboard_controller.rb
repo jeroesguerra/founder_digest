@@ -4,7 +4,7 @@ class DashboardController < ApplicationController
 
   def index
     @project = current_user.projects.first
-    @other_projects = Project.all
+    @other_projects = Project.except(@project).ready
   end
 
   private
