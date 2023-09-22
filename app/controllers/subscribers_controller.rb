@@ -11,7 +11,6 @@ class SubscribersController < ApplicationController
     def destroy
         @subscriber.destroy
         render json: { status: 'okay' }
-        # TODO: RENDER back
     end
 
     private
