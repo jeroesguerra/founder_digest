@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'dashboard#index'
 
   resources :stakeholder_updates, only: [:new, :create, :show, :update]
+  resources :updates, only: [:show]
   resources :account, only: [:index, :update]
   resources :billing_portal, only: [:create]
   match '/billing_portal' => 'billing_portal#create', via: [:get]
