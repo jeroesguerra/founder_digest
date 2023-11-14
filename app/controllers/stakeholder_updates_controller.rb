@@ -2,6 +2,7 @@ class StakeholderUpdatesController < ApplicationController
     before_action :authenticate_user!
     before_action :set_project, except: [:new]
     before_action :set_stakeholder_update, except: [:new, :create]
+    before_action :maybe_subscribe
     
     def new
         @stakeholder_update = StakeholderUpdate.new
@@ -13,12 +14,20 @@ class StakeholderUpdatesController < ApplicationController
     end
 
     def show
+    end
 
+    def edit
     end
 
     def update
         @stakeholder_update.update(stakeholder_updates_params)
-        redirect_to dashboard_path, notice: 'Update updated!'
+
+        if @stakeholder_update.confirmed?
+            redirect_to dashboard_path, notice: 'Update updated!'
+        else
+            redirect_to stakeholder_update_path(@stakeholder_update), notice: 'Stakeholder updated changes were saved!'
+        end
+        
     end
 
     private
