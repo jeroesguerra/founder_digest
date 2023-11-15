@@ -1,6 +1,6 @@
 class ApplicationMailer < ActionMailer::Base
   layout 'mailer'
-  default from: '"Support Team" <support@founderdigest.com>' #TODO: Change URL to be accountability group email
+  default from: '"Support Team" <jero@jeroesguerra.com>' 
 
   # mailer views live in views/mailers
   def self.inherited(subclass)
