@@ -17,7 +17,7 @@ class UserSubmission < ApplicationRecord
         accept! if status == 'Accept'
     end
 
-def reject!
+    def reject!
         UserSubmissionMailer.reject(self).deliver
     end
 
