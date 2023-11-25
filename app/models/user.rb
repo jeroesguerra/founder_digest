@@ -27,4 +27,8 @@ class User < ApplicationRecord
   def finished_onboarding?
     stripe_subscription_id?
   end
+
+  def update_name
+    update(first_name: 'UPDATED')
+  end
 end
